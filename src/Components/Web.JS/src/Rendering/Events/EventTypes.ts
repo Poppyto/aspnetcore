@@ -163,7 +163,8 @@ registerBuiltInEventType(['wheel', 'mousewheel'], {
 registerBuiltInEventType(['cancel', 'close', 'toggle'], createBlankEventArgsOptions);
 
 function parseChangeEvent(event: Event): ChangeEventArgs {
-  const element = event.target as Element;
+  const element = event.composed ? event.composedPath().find(_=>true) as Element
+                                 : event.target as Element;
   if (isTimeBasedInput(element)) {
     const normalizedValue = normalizeTimeBasedValue(element);
     return { value: normalizedValue };

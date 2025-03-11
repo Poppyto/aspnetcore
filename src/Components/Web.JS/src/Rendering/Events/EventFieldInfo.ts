@@ -6,7 +6,8 @@ export class EventFieldInfo {
   }
 
   public static fromEvent(componentId: number, event: Event): EventFieldInfo | null {
-    const elem = event.target;
+    const elem = event.composed ? event.composedPath().find(_=>true)
+                                : event.target;
     if (elem instanceof Element) {
       const fieldData = getFormFieldData(elem);
       if (fieldData) {
