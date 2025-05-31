@@ -4,8 +4,10 @@
     <!-- Avoid source build issues with WebAssembly -->
     <ExcludeFromSourceOnlyBuild>true</ExcludeFromSourceOnlyBuild>
   </PropertyGroup>
-
   <PropertyGroup>
-    <WasmBootConfigFileName>dotnet.boot.js</WasmBootConfigFileName>
+    <WasmPreloadAssets>false</WasmPreloadAssets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <BlazorCacheBootResources>false</BlazorCacheBootResources>
   </PropertyGroup>
 </Project>

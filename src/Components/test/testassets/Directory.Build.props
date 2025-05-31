@@ -19,8 +19,10 @@
       <_Parameter2>true</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
-
   <PropertyGroup>
-    <WasmBootConfigFileName>dotnet.boot.js</WasmBootConfigFileName>
+    <WasmPreloadAssets>false</WasmPreloadAssets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <BlazorCacheBootResources>false</BlazorCacheBootResources>
   </PropertyGroup>
 </Project>
